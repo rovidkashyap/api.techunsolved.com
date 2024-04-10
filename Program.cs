@@ -7,6 +7,8 @@ using api.techunsolved.com.Repository.TechArticlesDataRepository.Class;
 using api.techunsolved.com.Repository.TechArticlesDataRepository.Interface;
 using api.techunsolved.com.Repository.TechCategoryRepository.Class;
 using api.techunsolved.com.Repository.TechCategoryRepository.Interface;
+using api.techunsolved.com.Repository.TechInterviewQuestionsRepository.Class;
+using api.techunsolved.com.Repository.TechInterviewQuestionsRepository.Interface;
 using api.techunsolved.com.Repository.TechModuleRepository.Class;
 using api.techunsolved.com.Repository.TechModuleRepository.Interface;
 using api.techunsolved.com.Repository.TechSubCategoryRepository.Class;
@@ -34,6 +36,7 @@ builder.Services.AddScoped<ITechModuleRepository, TechModuleRepository>();
 builder.Services.AddScoped<ITechTopicRepository, TechTopicRepository>();
 builder.Services.AddScoped<ITechArticleRepository, TechArticleRepository>();
 builder.Services.AddScoped<ITechArticlesDataRepository, TechArticlesDataRepository>();
+builder.Services.AddScoped<ITechInterviewQuestionsRepository, TechInterviewQuestionsRepository>();
 builder.Services.AddTransient<IDateTimeService, DateTimeService>();
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 

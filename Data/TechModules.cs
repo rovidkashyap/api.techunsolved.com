@@ -15,5 +15,6 @@ namespace api.techunsolved.com.Data
         public virtual TechSubcategory TechSubCategories { get; set; }
 
         public virtual ICollection<TechTopics> techTopic { get; set; }
+        public virtual ICollection<TechInterview_Questions> techInterview_Questions { get; set; }
     }
 }

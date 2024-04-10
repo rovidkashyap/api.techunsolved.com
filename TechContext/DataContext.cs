@@ -24,6 +24,8 @@ namespace api.techunsolved.com.TechContext
 
         public DbSet<TechArticlesData> techArticlesData { get; set; }
 
+        public DbSet<TechInterview_Questions> techInterviewQuestions { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +37,7 @@ namespace api.techunsolved.com.TechContext
             modelBuilder.ApplyConfiguration(new TechArticleConfig());
 
             modelBuilder.ApplyConfiguration(new TechArticlesDataConfig());
+            modelBuilder.ApplyConfiguration(new TechInterviewQuestionsDataConfig());
 
         }
 

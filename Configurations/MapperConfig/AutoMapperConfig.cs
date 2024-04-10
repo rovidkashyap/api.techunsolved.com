@@ -6,6 +6,7 @@ using api.techunsolved.com.Models.Dto.TechArticlesDataDto;
 using api.techunsolved.com.Models.Dto.TechModulesDto;
 using api.techunsolved.com.Models.Dto.TechTopicDto;
 using Microsoft.OpenApi.Services;
+using api.techunsolved.com.Models.Dto.TechInterviewQuestionsDto;
 
 namespace api.techunsolved.com.Configurations.MapperConfig
 {
@@ -145,6 +146,19 @@ namespace api.techunsolved.com.Configurations.MapperConfig
                 .ForMember(x => x.CreatedDate, opt => opt.MapFrom(x => x.CreateDate))
                 .ForMember(x => x.ModifiedDate, opt => opt.MapFrom(x => x.LastModifiedDate))
                 .ReverseMap();
+
+            #region techInterviewQuestions
+            CreateMap<TechInterview_Questions, GetAllInterviewQuestionsDto>()
+                .ForMember(x => x.QuestionId, opt => opt.MapFrom(x => x.QuestionId))
+                .ForMember(x => x.QuestionName, opt => opt.MapFrom(x => x.QuestionName))
+                .ForMember(x => x.Level, opt => opt.MapFrom(x => x.Level))
+                .ForMember(x => x.TechModulesId, opt => opt.MapFrom(x => x.TechModulesId))
+                .ForMember(x => x.techModules, opt => opt.MapFrom(x => x.techModules.TechModulesName))
+                .ReverseMap();
+
+            CreateMap<TechInterview_Questions, CreateInterviewQuestionsDto>()
+                .ReverseMap();
+            #endregion
         }
     }
 }
